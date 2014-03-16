@@ -1313,6 +1313,14 @@ use File::Glob qw(:case);
         'FILES'        => q[cpan/Win32],
     },
 
+    'Win32::Job' => {
+        'DISTRIBUTION' => 'JDB/Win32-Job-0.05.tar.gz',
+        'FILES'        => q[cpan/Win32-Job],
+        'EXCLUDED'     => [
+            qr{^eg/},
+        ],
+    },
+
     'Win32API::File' => {
         'DISTRIBUTION' => 'CHORNY/Win32API-File-0.1201.tar.gz',
         'FILES'        => q[cpan/Win32API-File],

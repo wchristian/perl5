@@ -2837,6 +2837,11 @@ cpan/Win32API-File/Makefile.PL	Win32API::File extension makefile write
 cpan/Win32API-File/t/file.t	See if Win32API::File extension works
 cpan/Win32API-File/t/tie.t	See if Win32API::File extension works
 cpan/Win32API-File/typemap	Win32API::File extension interface types
+cpan/Win32-Job/Job.pm
+cpan/Win32-Job/Job.xs
+cpan/Win32-Job/Makefile.PL
+cpan/Win32-Job/typemap
+cpan/Win32-Job/t/basic.t
 cpan/Win32/longpath.inc			Win32 extension long path support
 cpan/Win32/Makefile.PL			Win32 extension makefile writer
 cpan/Win32/t/CodePage.t			See if Win32 extension works
