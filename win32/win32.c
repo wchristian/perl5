@@ -140,7 +140,10 @@ static PerlIO * do_popen(const char *mode, const char *command, IV narg,
 			 SV **args);
 static long	find_pid(pTHX_ int pid);
 static void	remove_dead_process(long child);
-static int	terminate_process(DWORD pid, HANDLE process_handle, int sig);
+static void	set_errno_with_process_table(int pid);
+static int	pid_is_in_process_table(int pid);
+static int	process_is_terminated(HANDLE process_handle);
+static int	send_signal(int pid, HANDLE process_handle, int sig);
 static int	my_killpg(int pid, int sig);
 static int	my_kill(int pid, int sig);
 static void	out_of_memory(void);
@@ -1223,8 +1226,70 @@ win32_wait_for_children(pTHX)
 }
 #endif
 
+static void
+set_errno_with_process_table(int pid)
+{
+    int process_is_real = pid_is_in_process_table(pid); // quite slow, but the only way
+    if (process_is_real == -1) {
+        errno = EACCES; // something went wrong while checking the process table
+    }
+    else if (!process_is_real) {
+        errno = ESRCH; // unaccessible those process
+    }
+    else {
+        errno = EPERM; // process does exist, but is unaccessible
+    }
+}
+
 static int
-terminate_process(DWORD pid, HANDLE process_handle, int sig)
+pid_is_in_process_table(int pid)
+{
+    HANDLE snapshot_handle;
+    int exists;
+    PROCESSENTRY32 entry;
+    snapshot_handle = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, NULL);
+    if (snapshot_handle != INVALID_HANDLE_VALUE) {
+        exists = 0;
+        entry.dwSize = sizeof(entry);
+        if (Process32First(snapshot_handle, &entry)) {
+            do {
+                if (entry.th32ProcessID == (DWORD)pid)
+                    exists = 1;
+                entry.dwSize = sizeof(entry);
+            }
+            while (Process32Next(snapshot_handle, &entry));
+        }
+        CloseHandle(snapshot_handle);
+    }
+    return exists;
+}
+
+static int
+process_is_terminated(HANDLE process_handle)
+{
+    // check process handle for liveliness
+    dwR = WaitForSingleObject(process_handle, 0);
+    if (dwR == WAIT_FAILED) {
+        int wait_error = GetLastError();
+        if (wait_error == ERROR_ACCESS_DENIED) {
+            errno = EPERM; // process handle unaccessible
+        }
+        else {
+            errno = EFAULT; // we got an error from WaitForSingleObject that's unhandled and unknown
+        }
+        return -1;
+    }
+    if(dwR == WAIT_OBJECT_0)
+        return 1; // it's really dead
+    if(dwR == WAIT_TIMEOUT)
+        return 0; // still alive!
+
+    errno = EFAULT; // we got a result from WaitForSingleObject that's unhandled and unknown
+    return -1;
+}
+
+static int
+send_signal(int pid, HANDLE process_handle, int sig)
 {
     switch(sig) {
     case 0:
@@ -1265,7 +1330,7 @@ my_killpg(int pid, int sig)
     if (process_handle == NULL)
         return 0;
 
-    killed += terminate_process(pid, process_handle, sig);
+    killed += send_signal(pid, process_handle, sig);
 
     snapshot_handle = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
     if (snapshot_handle != INVALID_HANDLE_VALUE) {
@@ -1296,11 +1361,40 @@ my_kill(int pid, int sig)
     if (sig < 0)
         return my_killpg(pid, -sig);
 
-    process_handle = OpenProcess(PROCESS_TERMINATE, FALSE, pid);
-    /* OpenProcess() returns NULL on error, *not* INVALID_HANDLE_VALUE */
+    // only pids with the lower two bits unset are valid
+    // see: http://blogs.msdn.com/b/oldnewthing/archive/2008/02/28/7925962.aspx
+    if (pid & 3) {
+        errno = ESRCH;
+        return retval;
+    }
+
+    process_handle = OpenProcess(PROCESS_TERMINATE|PROCESS_QUERY_INFORMATION|SYNCHRONIZE, FALSE, pid);
     if (process_handle != NULL) {
-        retval = terminate_process(pid, process_handle, sig);
+        int is_terminated;
+        is_terminated = process_is_terminated(process_handle);
+        if (!is_terminated) {
+            retval = send_signal(pid, process_handle, sig);
+        }
+        else if (is_terminated == -1) {
+            if (errno == EPERM) // other errnos from process_is_terminated should bubble up
+                set_errno_with_process_table(pid);
+        }
+        else {
+            errno = ESRCH; // process does not exist
+        }
         CloseHandle(process_handle);
+    }
+    else {
+        int process_open_error = GetLastError();
+        if (process_open_error == ERROR_INVALID_PARAMETER) {
+            errno = ESRCH; // process does not exist
+        }
+        else if (process_open_error == ERROR_ACCESS_DENIED) {
+            set_errno_with_process_table(pid);
+        }
+        else {
+            errno = EFAULT; // we got an error from OpenProcess that's unhandled and unknown
+        }
     }
     return retval;
 }
@@ -1427,6 +1521,7 @@ win32_kill(int pid, int sig)
 	else {
             if (my_kill(pid, sig))
                 return 0;
+            return -1; // trust my_kill to set errno if needed
 	}
     }
     errno = EINVAL;
