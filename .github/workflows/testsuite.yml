@@ -13,8 +13,6 @@ jobs:
     name: "cygwin"
     runs-on: windows-latest
     timeout-minutes: 120
-    needs: sanity_check
-    if: needs.sanity_check.outputs.run_all_jobs == 'true'
 
     env:
       PERL_SKIP_TTY_TEST: 1
