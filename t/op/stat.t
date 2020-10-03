@@ -309,6 +309,7 @@ SKIP: {
 	my @c2 = eval qq[grep { $_[1] "/dev/\$_" } \@DEV];
 	my $c1 = scalar @c1;
 	my $c2 = scalar @c2;
+        diag ( "================",$DEV, "--------", @DEV, "================", @c1, "--------", @c2, "================") unless #
 	is($c1, $c2, "ls and $_[1] agreeing on /dev ($c1 $c2)");
     };
 
