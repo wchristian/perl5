@@ -5479,106 +5479,15 @@ SECURITY.md			Add Security Policy for GitHub
 stadtx_hash.h			StadtX hash code (64 Bit fast hash function)
 sv.c				Scalar value code
 sv.h				Scalar value header
-t/base/cond.t			See if conditionals work
-t/base/if.t			See if if works
-t/base/lex.t			See if lexical items work
-t/base/num.t			See if numbers work
-t/base/pat.t			See if pattern matching works
-t/base/rs.t			See if record-read works
-t/base/term.t			See if various terms work
-t/base/translate.t		See if character set translation works
-t/base/while.t			See if while work
-t/benchmark/gh7094-speed-up-keys-on-empty-hash.t	Benchmark if keys on empty hashes is fast enough
-t/bigmem/hash.t			Check hashing too large strings throws an exception
-t/bigmem/index.t		Check that index() handles large offsets
-t/bigmem/pos.t			Check that pos() handles large offsets
-t/bigmem/read.t			Check read() handles large offsets
-t/bigmem/regexp.t		Test regular expressions with large strings
-t/bigmem/subst.t		Test s/// with large strings
-t/bigmem/vec.t			Check vec() handles large offsets
 t/charset_tools.pl		To aid in portable testing across platforms with different character sets
-t/cmd/elsif.t			See if else-if works
-t/cmd/for.t			See if for loops work
-t/cmd/mod.t			See if statement modifiers work
-t/cmd/subval.t			See if subroutine values work
-t/cmd/switch.t			See if switch optimizations work
-t/comp/bproto.t			See if builtins conform to their prototypes
-t/comp/cmdopt.t			See if command optimization works
-t/comp/colon.t			See if colons are parsed correctly
-t/comp/decl.t			See if declarations work
-t/comp/filter_exception.t	See if $@ survives source filters
-t/comp/final_line_num.t		See if line numbers are correct at EOF
-t/comp/fold.t			See if constant folding works
-t/comp/form_scope.t		See if format scoping works
 t/comp/hints.aux		Auxiliary file for %^H test
-t/comp/hints.t			See if %^H works
-t/comp/line_debug.t		See if @{"_<$file"} works
 t/comp/line_debug_0.aux		Auxiliary file for @{"_<$file"} test
-t/comp/multiline.t		See if multiline strings work
-t/comp/opsubs.t			See if q() etc. are not parsed as functions
-t/comp/our.t			Tests for our declaration
-t/comp/package.t		See if packages work
-t/comp/package_block.t		See if package block syntax works
-t/comp/parser.t			See if the parser works in edge cases
-t/comp/parser_run.t			See if parser works in additional edge case
-t/comp/proto.t			See if function prototypes work
-t/comp/redef.t			See if we get correct warnings on redefined subs
-t/comp/require.t		See if require works
-t/comp/retainedlines.t		See if the debugger can retain eval's lines
-t/comp/term.t			See if more terms work
-t/comp/uproto.t			See if the _ prototype works
-t/comp/use.t			See if pragmata work
-t/comp/utf.t			See if UTFs work
 t/harness			Finer diagnostics from test suite
-t/io/argv.t			See if ARGV stuff works
-t/io/binmode.t			See if binmode() works
-t/io/bom.t			See if scripts can start with a byte order mark
-t/io/closepid.t			See if close works for subprocesses
-t/io/crlf.t			See if :crlf works
-t/io/crlf_through.t		See if pipe passes data intact with :crlf
-t/io/data.t			See if DATA works
-t/io/defout.t			See if PL_defoutgv works
-t/io/dup.t			See if >& works right
-t/io/eintr.t			See if code called during EINTR is safe
-t/io/eintr_print.t		Test that print is not returning EINTR
-t/io/errno.t			See if $! is correctly set
-t/io/errnosig.t			Test case for restoration $! when leaving signal handlers
-t/io/fflush.t			See if auto-flush on fork/exec/system/qx works
-t/io/fs.t			See if directory manipulations work
-t/io/getcwd.t			See if Internals::getcwd is sane
-t/io/inplace.t			See if inplace editing works
-t/io/iofile.t			See if we can load IO::File on demand
-t/io/iprefix.t			See if inplace editing works with prefixes
-t/io/layers.t			See if PerlIO layers work
-t/io/nargv.t			See if nested ARGV stuff works
-t/io/open.t			See if open works
-t/io/openpid.t			See if open works for subprocesses
-t/io/paragraph_mode.t			See if paragraph mode works
-t/io/perlio.t			See if PerlIO works
-t/io/perlio_fail.t		See if bad layers fail
-t/io/perlio_leaks.t		See if PerlIO layers are leaking
-t/io/perlio_open.t		See if certain special forms of open work
-t/io/pipe.t			See if secure pipes work
-t/io/print.t			See if print commands work
-t/io/pvbm.t			See if PVBMs break IO commands
-t/io/read.t			See if read works
-t/io/say.t			See if say works
-t/io/sem.t			See if SysV semaphores work
-t/io/semctl.t			See if SysV semaphore semctl works
-t/io/shm.t			See if SysV shared memory works
-t/io/socket.t			See if socket functions work
-t/io/socketpair.t		See if socketpair function works
-t/io/tell.t			See if file seeking works
-t/io/through.t			See if pipe passes data intact
-t/io/utf8.t			See if file seeking works
-t/japh/abigail.t		Obscure tests
 t/lib/CannotParse.pm		For test case in op/require_errors.t
 t/lib/charnames/alias		Tests of "use charnames" with aliases.
 t/lib/Cname.pm			Test charnames in regexes (op/pat.t)
 t/lib/common.pl			Helper for lib/{warnings,feature}.t
-t/lib/commonsense.t		See if configuration meets basic needs
 t/lib/Count.pm			Helper for t/op/method.t
-t/lib/croak.t			Test calls to Perl_croak() in the C source.
 t/lib/croak/gv			Test croak calls from gv.c
 t/lib/croak/mg			Test croak calls from mg.c
 t/lib/croak/op			Test croak calls from op.c
@@ -5589,9 +5498,7 @@ t/lib/croak/pp_sys		Test croak calls from pp_sys.c
 t/lib/croak/regcomp		Test croak calls from regcomp.c
 t/lib/croak/toke		Test croak calls from toke.c
 t/lib/croak/toke_l1		Test croak calls from toke.c; file is not UTF-8 encoded
-t/lib/cygwin.t			Builtin cygwin function tests
 t/lib/dbmt_common.pl		Common functionality for ?DBM_File tests
-t/lib/deprecate.t		Test deprecate.pm
 t/lib/deprecate/Deprecated.pm	Deprecated module to test deprecate.pm
 t/lib/deprecate/Optionally.pm	Optionally deprecated module to test deprecate.pm
 t/lib/Devel/nodb.pm		Module for t/run/switchd.t
@@ -5612,11 +5519,6 @@ t/lib/h2ph.pht			Generated output from h2ph.h by h2ph, for comparison
 t/lib/locale/latin1		Part of locale.t in Latin 1
 t/lib/locale/utf8		Part of locale.t in UTF8
 t/lib/mypragma.pm		An example user pragma
-t/lib/mypragma.t		Test the example user pragma
-t/lib/no_load.t			Test that some modules don't load others
-t/lib/overload_fallback.t	Test that using overload 2x in a scope doesn't clobber fallback
-t/lib/overload_nomethod.t	Test that nomethod works as expected
-t/lib/proxy_constant_subs.t	Test that Proxy Constant Subs behave correctly
 t/lib/Sans_mypragma.pm		Test module for t/lib/mypragma.t
 t/lib/strict/refs		Tests of "use strict 'refs'" for strict.t
 t/lib/strict/subs		Tests of "use strict 'subs'" for strict.t
@@ -5625,7 +5527,6 @@ t/lib/subs/subs			Tests of "use subs"
 t/lib/test_require.pm		A test file for t/op/inccode.t
 t/lib/test_use.pm		A test pragma for t/comp/use.t
 t/lib/test_use_14937.pm		A test pragma for t/comp/use.t
-t/lib/universal.t		Tests for functions in universal.c
 t/lib/warnings/1global		Tests of global warnings for warnings.t
 t/lib/warnings/2use		Tests for "use warnings" for warnings.t
 t/lib/warnings/3both		Tests for interaction of $^W and "use warnings"
@@ -5661,308 +5562,14 @@ t/lib/warnings/universal	Tests for universal.c for warnings.t
 t/lib/warnings/utf8		Tests for utf8.c for warnings.t
 t/lib/warnings/util		Tests for util.c for warnings.t
 t/loc_tools.pl			Common functions for finding platform's locales
-t/mro/basic.t			mro tests
-t/mro/basic_01_c3.t		mro tests
-t/mro/basic_01_c3_utf8.t	utf8 mro tests
-t/mro/basic_01_dfs.t		mro tests
-t/mro/basic_01_dfs_utf8.t	utf8 mro tests
-t/mro/basic_02_c3.t		mro tests
-t/mro/basic_02_c3_utf8.t	utf8 mro tests
-t/mro/basic_02_dfs.t		mro tests
-t/mro/basic_02_dfs_utf8.t	utf8 mro tests
-t/mro/basic_03_c3.t		mro tests
-t/mro/basic_03_c3_utf8.t	utf8 mro tests
-t/mro/basic_03_dfs.t		mro tests
-t/mro/basic_03_dfs_utf8.t	utf8 mro tests
-t/mro/basic_04_c3.t		mro tests
-t/mro/basic_04_c3_utf8.t	utf8 mro tests
-t/mro/basic_04_dfs.t		mro tests
-t/mro/basic_04_dfs_utf8.t	utf8 mro tests
-t/mro/basic_05_c3.t		mro tests
-t/mro/basic_05_c3_utf8.t	utf8 mro tests
-t/mro/basic_05_dfs.t		mro tests
-t/mro/basic_05_dfs_utf8.t	utf8 mro tests
-t/mro/basic_utf8.t		utf8 mro tests
-t/mro/c3_with_overload.t	mro tests
-t/mro/c3_with_overload_utf8.t	utf8 mro tests
-t/mro/complex_c3.t		mro tests
-t/mro/complex_c3_utf8.t		utf8 mro tests
-t/mro/complex_dfs.t		mro tests
-t/mro/complex_dfs_utf8.t	utf8 mro tests
-t/mro/dbic_c3.t			mro tests
-t/mro/dbic_c3_utf8.t		utf8 mro tests
-t/mro/dbic_dfs.t		mro tests
-t/mro/dbic_dfs_utf8.t		utf8 mro tests
-t/mro/inconsistent_c3.t		mro tests
-t/mro/inconsistent_c3_utf8.t	utf8 mro tests
-t/mro/isa_aliases.t		tests for shared @ISA arrays
-t/mro/isa_aliases_utf8.t	utf8 mro tests
-t/mro/isa_c3.t			test for optimisatised mro_get_linear_isa_c3
-t/mro/isa_c3_utf8.t		utf8 mro tests
-t/mro/isa_dfs.t			test for optimisatised mro_get_linear_isa_dfs
-t/mro/isa_dfs_utf8.t		utf8 mro tests
-t/mro/isarev.t			PL_isarev/mro::get_isarev tests
-t/mro/isarev_utf8.t		utf8 mro tests
-t/mro/method_caching.t		mro tests
-t/mro/method_caching_utf8.t	utf8 mro tests
-t/mro/next_edgecases.t		mro tests
-t/mro/next_edgecases_utf8.t	utf8 mro tests
-t/mro/next_goto.t		mro tests
-t/mro/next_goto_utf8.t		utf8 mro tests
-t/mro/next_inanon.t		mro tests
-t/mro/next_inanon_utf8.t	utf8 mro tests
-t/mro/next_ineval.t		mro tests
-t/mro/next_ineval_utf8.t	utf8 mro tests
-t/mro/next_method.t		mro tests
-t/mro/next_method_utf8.t	utf8 mro tests
-t/mro/next_NEXT.t		mro tests
-t/mro/next_NEXT_utf8.t		utf8 mro tests
-t/mro/next_skip.t		mro tests
-t/mro/next_skip_utf8.t		utf8 mro tests
-t/mro/overload_c3.t		mro tests
-t/mro/overload_c3_utf8.t	utf8 mro tests
-t/mro/overload_dfs.t		mro tests
-t/mro/package_aliases.t		mro tests
-t/mro/package_aliases_utf8.t	utf8 mro tests
-t/mro/pkg_gen.t			mro tests
-t/mro/pkg_gen_utf8.t		utf8 mro tests
-t/mro/recursion_c3.t		mro tests
-t/mro/recursion_c3_utf8.t	utf8 mro tests
-t/mro/recursion_dfs.t		mro tests
-t/mro/recursion_dfs_utf8.t	utf8 mro tests
-t/mro/vulcan_c3.t		mro tests
-t/mro/vulcan_c3_utf8.t		utf8 mro tests
-t/mro/vulcan_dfs.t		mro tests
-t/mro/vulcan_dfs_utf8.t		utf8 mro tests
-t/op/64bitint.t			See if 64 bit integers work
-t/op/aassign.t			test list assign
-t/op/alarm.t			See if alarm works
-t/op/anonconst.t		See if :const works
-t/op/anonsub.t			See if anonymous subroutines work
-t/op/append.t			See if . works
-t/op/args.t			See if operations on @_ work
-t/op/array.t			See if array operations work
-t/op/assignwarn.t		See if OP= operators warn correctly for undef targets
-t/op/attrhand.t			See if attribute handlers work
-t/op/attrproto.t		See if the prototype attribute works
-t/op/attrs.t			See if attributes on declarations work
-t/op/auto.t			See if autoincrement et all work
-t/op/avhv.t			See if pseudo-hashes work
-t/op/bless.t			See if bless works
-t/op/blocks.t			See if BEGIN and friends work
-t/op/bop.t			See if bitops work
 t/op/caller.pl			Tests shared between caller.t and XS op.t
-t/op/caller.t			See if caller() works
-t/op/catch.t			See if catching exception works
-t/op/chars.t			See if character escapes work
-t/op/chdir.t			See if chdir works
-t/op/chop.t			See if chop works
-t/op/chr.t			See if chr works
-t/op/closure.t			See if closures work
 t/op/closure_test.pl		Extra file for closure.t
-t/op/cmpchain.t			See if comparison chaining works
-t/op/concat2.t			Tests too complex for concat.t
-t/op/cond.t			See if conditional expressions work
-t/op/const-optree.t		Tests for sub(){...} becoming constant
-t/op/context.t			See if context propagation works
-t/op/coreamp.t			Test &foo() calls for CORE subs
-t/op/coresubs.t			Generic tests for CORE subs
-t/op/cproto.t			Check builtin prototypes
-t/op/crypt.t			See if crypt works
-t/op/current_sub.t		__SUB__ tests
-t/op/dbm.t			See if dbmopen/dbmclose work
-t/op/decl-refs.t		See if my \$foo works
-t/op/defined.t			See if defined() edge cases work
-t/op/defins.t			See if auto-insert of defined() works
-t/op/delete.t			See if delete works
-t/op/die.t			See if die works
-t/op/die_except.t		See if die/eval avoids $@ clobberage
-t/op/die_exit.t			See if die and exit status interaction works
-t/op/die_keeperr.t		See if G_KEEPERR works for destructors
-t/op/die_unwind.t		Check die/eval early-$@ backcompat hack
-t/op/do.t			See if subroutines work
-t/op/dor.t			See if defined-or (//) works
-t/op/dump.t			See if dump works.
-t/op/each.t			See if hash iterators work
-t/op/each_array.t		See if array iterators work
-t/op/eval.t			See if eval operator works
-t/op/evalbytes.t		See if evalbytes operator works
-t/op/exec.t			See if exec, system and qx work
-t/op/exists_sub.t		See if exists(&sub) works
-t/op/exp.t			See if math functions work
-t/op/fh.t			See if filehandles work
-t/op/filehandle.t		Tests for https://github.com/Perl/perl5/issues/10133
-t/op/filetest.t			See if file tests work
-t/op/filetest_stack_ok.t	See if file tests leave their argument on the stack
-t/op/filetest_t.t		See if -t file test works
-t/op/flip.t			See if range operator works
-t/op/for.t			See if for loops work
-t/op/fork.t			See if fork works
-t/op/fresh_perl_utf8.t		UTF8 tests for pads and gvs
-t/op/getpid.t			See if $$ and getppid work with threads
-t/op/getppid.t			See if getppid works
-t/op/glob.t			See if <*> works
-t/op/gmagic.t			See if GMAGIC works
-t/op/goto.t			See if goto works
-t/op/goto_xs.t			See if "goto &sub" works on XSUBs
-t/op/grent.t			See if getgr*() functions work
-t/op/grep.t			See if grep() and map() work
-t/op/groups.t			See if $( works
-t/op/gv.t			See if typeglobs work
-t/op/hash.t			See if the complexity attackers are repelled
-t/op/hash-rt85026.t		See if hash iteration/deletion works
-t/op/hashassign.t		See if hash assignments work
-t/op/hashwarn.t			See if warnings for bad hash assignments work
-t/op/heredoc.t			See if heredoc edge and corner cases work
-t/op/hexfp.t			See if hexadecimal float literals work
-t/op/inc.t			See if inc/dec of integers near 32 bit limit work
-t/op/inccode.t			See if coderefs work in @INC
-t/op/inccode-tie.t		See if tie to @INC works
-t/op/incfilter.t		See if the source filters in coderef-in-@INC work
-t/op/index.t			See if index works
-t/op/index_thr.t		See if index works in another thread
-t/op/infnan.t			See if inf/nan work
-t/op/int.t			See if int works
-t/op/isa.t			See if isa works
-t/op/join.t			See if join works
-t/op/kill0.t			See if kill works
 t/op/kill0_child		Process tree script that is kill()ed
-t/op/kvaslice.t			See if index/value array slices work
-t/op/kvhslice.t			See if key/value hash slices work
-t/op/lc.t			See if lc, uc, lcfirst, ucfirst, quotemeta work
-t/op/leaky-magic.t		See whether vars' magic leaks into packages
-t/op/length.t			See if length works
-t/op/lex.t			Tests too complex for t/base/lex.t
-t/op/lex_assign.t		See if ops involving lexicals or pad temps work
-t/op/lexsub.t			See if lexical subroutines work
-t/op/lfs.t			See if large files work for perlio
-t/op/list.t			See if lists and list slices work
-t/op/local.t			See if local works
-t/op/localref.t			See if local ${deref} works
-t/op/lock.t			Tests for lock args & retval (no threads)
-t/op/loopctl.t			See if next/last/redo work
-t/op/lop.t			See if logical operators work
-t/op/lvref.t			See if aliasing via references works
-t/op/magic.t			See if magic variables work
-t/op/magic-27839.t		Test for #27839, skipped for minitest
-t/op/method.t			See if method calls work
-t/op/mkdir.t			See if mkdir works
-t/op/multideref.t		See if "$a[0]{foo}[$i]{$k}" etc works
-t/op/my.t			See if lexical scoping works
-t/op/my_stash.t			See if my Package works
-t/op/mydef.t			See if "my $_" works
-t/op/negate.t			See if unary minus works
-t/op/not.t			See if not works
-t/op/numconvert.t		See if accessing fields does not change numeric values
-t/op/oct.t			See if oct and hex work
-t/op/or.t			See if || works in weird situations
-t/op/ord.t			See if ord works
-t/op/overload_integer.t		See if overload::constant for integer works after "use".
-t/op/override.t			See if operator overriding works
-t/op/pack.t			See if pack and unpack work
-t/op/packagev.t			See if package VERSION work
-t/op/pos.t			See if pos works
-t/op/postfixderef.t		See if ->$* ->@[ et al work
-t/op/pow.t			See if ** works
-t/op/print.t			See if print works
-t/op/protowarn.t		See if the illegalproto warnings work
-t/op/push.t			See if push and pop work
-t/op/pwent.t			See if getpw*() functions work
-t/op/qr.t			See if qr works
-t/op/quotemeta.t		See if quotemeta works
-t/op/rand.t			See if rand works
-t/op/range.t			See if .. works
-t/op/read.t			See if read() works
-t/op/readdir.t			See if readdir() works
-t/op/readline.t			See if <> / readline / rcatline work
-t/op/recurse.t			See if deep recursion works
-t/op/ref.t			See if refs and objects work
-t/op/repeat.t			See if x operator works
-t/op/require_37033.t		See if require always closes rsfp
-t/op/require_errors.t		See if errors from require are reported correctly
-t/op/require_override.t		See if require handles no argument properly
-t/op/reset.t			See if reset operator works
-t/op/reverse.t			See if reverse operator works
-t/op/rt119311.t			Test bug #119311 (die/DESTROY/recursion)
-t/op/runlevel.t			See if die() works from perl_call_*()
-t/op/select.t			See if 0- and 1-argument select works
-t/op/setpgrpstack.t		See if setpgrp works
-t/op/sigdispatch.t		See if signals are always dispatched
-t/op/signame_canonical.t	See if duplicate signal names always use the canonical name when the handler is invoked.
-t/op/signatures.t		See if sub signatures work
-t/op/sigsystem.t		See if system and SIGCHLD handlers play together nicely
-t/op/sleep.t			See if sleep works
-t/op/smartkve.t			See if smart deref for keys/values/each works
-t/op/smartmatch.t		See if the ~~ operator works
-t/op/sort.t			See if sort works
-t/op/splice.t			See if splice works
-t/op/split.t			See if split works
-t/op/split_unicode.t		Test split /\s/ and Unicode
-t/op/sprintf.t			See if sprintf works
-t/op/sprintf2.t			See if sprintf works
-t/op/srand.t			See if srand works
-t/op/sselect.t			See if 4 argument select works
-t/op/stash.t			See if %:: stashes work
-t/op/stash_parse_gv.t		See if parse_gv_stash_name works
 t/op/stat.t			See if stat works
-t/op/stat_errors.t		See if stat and file tests handle threshold errors
-t/op/state.t			See if state variables work
-t/op/study.t			See if study works
-t/op/studytied.t		See if study works with tied scalars
-t/op/sub.t			See if subroutines work
-t/op/sub_lval.t			See if lvalue subroutines work
-t/op/substr.t			See if substr works
-t/op/substr_thr.t		See if substr works in another thread
 t/op/svleak.pl			Test file for svleak.t
-t/op/svleak.t			See if stuff leaks SVs
-t/op/switch.t			See if switches (given/when) work
-t/op/symbolcache.t		See if undef/delete works on stashes with functions
-t/op/sysio.t			See if sysread and syswrite work
-t/op/taint.t			See if tainting works
-t/op/threads.t			Misc. tests for perl features with threads
-t/op/threads-dirh.t		Test interaction of threads and dir handles
 t/op/threads_create.pl		Ancillary file for t/op/threads.t
-t/op/tie.t			See if tie/untie functions work
-t/op/tie_fetch_count.t		See if FETCH is only called once on tied variables
-t/op/tiearray.t			See if tie for arrays works
-t/op/tiehandle.t		See if tie for handles works
-t/op/time.t			See if time functions work
-t/op/time_loop.t		Test that very large values don't hang gmtime and localtime.
-t/op/tr.t			See if tr works
-t/op/tr_latin1.t		See if tr works, but file isn't encoded in UTF-8
-t/op/undef.t			See if undef works
-t/op/universal.t		See if UNIVERSAL class works
-t/op/unlink.t			See if unlink works
-t/op/unshift.t			See if unshift works
-t/op/upgrade.t			See if upgrading and assigning scalars works
-t/op/utf8cache.t		Tests malfunctions of utf8 cache
-t/op/utf8decode.t		See if UTF-8 decoding works
-t/op/utf8magic.t		See if utf8:: functions handle magic variables
-t/op/utfhash.t			See if utf8 keys in hashes behave
-t/op/utftaint.t			See if utf8 and taint work together
-t/op/vec.t			See if vectors work
-t/op/ver.t			See if v-strings and the %v format flag work
-t/op/waitpid.t			See if waitpid works
-t/op/wantarray.t		See if wantarray works
-t/op/warn.t			See if warn works
-t/op/while.t			See if while loops work
-t/op/write.t			See if write works (formats work)
-t/op/yadayada.t			See if ... works
-t/opbasic/arith.t			See if arithmetic works
-t/opbasic/cmp.t			See if the various string and numeric compare work
-t/opbasic/concat.t			See if string concatenation works
-t/opbasic/magic_phase.t		See if ${^GLOBAL_PHASE} works
-t/opbasic/qq.t			See if qq works
 t/perf/benchmarks		snippets of benchmarking/profiling code
-t/perf/benchmarks.t		test t/perf/benchmarks syntax
-t/perf/opcount.t		See if optimised subs have the right op counts
-t/perf/optree.t			Test presence of some op optimisations
-t/perf/speed.t			See if optimisations are keeping things fast
-t/perf/taint.t			See if optimisations are keeping things fast (taint issues)
 t/perl.supp			Perl valgrind suppressions
-t/porting/args_assert.t		Check that all PERL_ARGS_ASSERT* macros are used
-t/porting/authors.t		Check that all authors have been acknowledged
-t/porting/bench.t		Check Porting/bench.pl runs ok
 t/porting/bench/badhash		a test file for t/porting/bench.t
 t/porting/bench/badname		a test file for t/porting/bench.t
 t/porting/bench/badversion.json	a test file for t/porting/bench.t
@@ -5971,191 +5578,22 @@ t/porting/bench/callsub2.json	a test file for t/porting/bench.t
 t/porting/bench/oddentry	a test file for t/porting/bench.t
 t/porting/bench/ret0		a test file for t/porting/bench.t
 t/porting/bench/synerr		a test file for t/porting/bench.t
-t/porting/bench_selftest.t	run Porting/bench.pl's selftest facility
-t/porting/bincompat.t		Check that {non_,}bincompat_options are ordered
-t/porting/checkcase.t		Check whether we are case-insensitive-fs-friendly
-t/porting/checkcfgvar.t		Check that all config.sh-like files are good
-t/porting/cmp_version.t		Test whether all changed module files have their VERSION bumped
-t/porting/copyright.t		Check that copyright years match
-t/porting/corelist.t		Check that Module-CoreList has perl versions for the current perl
 t/porting/customized.dat		Data file for porting/customized.t
-t/porting/customized.t		Check all CUSTOMIZED files are as they should be
-t/porting/diag.t		Test completeness of perldiag.pod
-t/porting/dual-life.t		Check that dual-life bins are in utils/
-t/porting/exec-bit.t		Check that exec-bit bins are identified
-t/porting/extrefs.t		Check perl headers don't make extern refs
-t/porting/filenames.t		Check the MANIFEST for filename portability.
-t/porting/FindExt.t		Test win32/FindExt.pm
-t/porting/globvar.t		Check that globvar.sym is sane
 t/porting/known_pod_issues.dat	Data file for porting/podcheck.t
-t/porting/libperl.t		Check libperl.a sanity
-t/porting/maintainers.t		Test that Porting/Maintainers.pl is up to date
-t/porting/manifest.t		Test that this MANIFEST file is well formed
-t/porting/pending-author.t	Check if any pending commit would break tests
-t/porting/perlfunc.t		Test that Functions_pm.PL can parse perlfunc.pod
-t/porting/pod_rules.t		Check that various pod lists are consistent
-t/porting/podcheck.t		Test the POD of shipped modules is well formed
-t/porting/re_context.t		Check assumptions made by save_re_context()
-t/porting/readme.t		Check that all files in Porting/ are mentioned in Porting/README.pod
-t/porting/regen.t		Check that regen.pl doesn't need running
-t/porting/ss_dup.t		Check that sv.c:ss_dup handles everything
-t/porting/test_bootstrap.t	Test that the instructions for test bootstrapping aren't accidentally overlooked.
-t/porting/utils.t		Check that utility scripts still compile
-t/re/alpha_assertions.t		See if things like '(*postive_lookahed:...) work properly
-t/re/anyof.t			See if bracketed char classes [...] compile properly
-t/re/begin-once.t		Checking that /o freeze a variable in a RegExp
-t/re/bigfuzzy_not_utf8.t	Big and ugly tests not storable as UTF-8
-t/re/charset.t			See if regex modifiers like /d, /u work properly
 t/re/fold_grind.pl		Core file to see if regex case folding works properly
-t/re/fold_grind_8.t		Wrapper for fold_grind.pl for /l testing with a UTF-8 locale
-t/re/fold_grind_a.t		Wrapper for fold_grind.pl for /a testing
-t/re/fold_grind_aa.t		Wrapper for fold_grind.pl for /aa testing
-t/re/fold_grind_d.t		Wrapper for fold_grind.pl for /d testing
-t/re/fold_grind_l.t		Wrapper for fold_grind.pl for /l testing with a C locale
-t/re/fold_grind_T.t		Wrapper for fold_grind.pl for /l testing with a Turkic locale
-t/re/fold_grind_u.t		Wrapper for fold_grind.pl for /u testing
-t/re/keep_tabs.t		Tests where \t can't be expanded.
-t/re/no_utf8_pm.t		Verify utf8.pm doesn't get loaded unless required
-t/re/overload.t		Test against string corruption in pattern matches on overloaded objects
-t/re/pat.t			See if esoteric patterns work
-t/re/pat_advanced.t		See if advanced esoteric patterns work
-t/re/pat_advanced_thr.t		See if advanced esoteric patterns work in another thread
-t/re/pat_psycho.t		See if insane esoteric and slow patterns work
-t/re/pat_psycho_thr.t		See if insane esoteric and slow patterns work in another thread
-t/re/pat_re_eval.t		See if esoteric patterns using re 'eval' work
-t/re/pat_re_eval_thr.t		See if esoteric patterns using re 'eval' work in another thread
-t/re/pat_rt_report.t		See if esoteric patterns from rt reports work
-t/re/pat_rt_report_thr.t	See if esoteric patterns from rt reports work in another thread
-t/re/pat_special_cc.t		See if special charclasses (\s \w \d) work the same as (\s and [\s])
-t/re/pat_special_cc_thr.t	See if special charclasses (\s \w \d) work the same as (\s and [\s]) under threads
-t/re/pat_thr.t			See if esoteric patterns work in another thread
-t/re/pos.t			Ensure pos() gets set properly after pre-match failures in pp_match
-t/re/qr.t			See if qr works
-t/re/qr-72922.t			Test for bug #72922
-t/re/qr_gc.t			See if qr doesn't leak
-t/re/qrstack.t			See if qr expands the stack properly
 t/re/re_tests			Regular expressions for regexp.t
-t/re/recompile.t		See if pattern caching/recompilation works
-t/re/reg_60508.t		See if bug #60508 is fixed
-t/re/reg_email.t		See if regex recursion works by parsing email addresses
-t/re/reg_email_thr.t		See if regex recursion works by parsing email addresses in another thread
-t/re/reg_eval.t			Test again regexp state corruption in (?{ }) and (??{ })
-t/re/reg_eval_scope.t		Test scoping issues with (?{ }) and (??{ })
-t/re/reg_fold.t			See if case folding works properly
-t/re/reg_mesg.t			See if one can get regular expression errors
-t/re/reg_namedcapture.t		Make sure glob assignment doesn't break named capture
-t/re/reg_nc_tie.t		Test the tied methods of Tie::Hash::NamedCapture
-t/re/reg_nocapture.t		Test the /n flag for regexps
-t/re/reg_pmod.t			See if regexp /p modifier works as expected
-t/re/reg_posixcc.t		See if posix character classes behave consistently
-t/re/regex_sets.t		Test (?[ ])
-t/re/regex_sets_compat.t	Test (?[ ]) is compatible with old [ ]
-t/re/regexp.t			See if regular expressions work
-t/re/regexp_noamp.t		See if regular expressions work with optimizations
-t/re/regexp_nonull.t		See if regexps work without trailing nulls
-t/re/regexp_notrie.t		See if regular expressions work without trie optimisation
-t/re/regexp_qr.t		See if regular expressions work as qr//
-t/re/regexp_qr_embed.t		See if regular expressions work with embedded qr//
-t/re/regexp_qr_embed_thr.t	See if regular expressions work with embedded qr// in another thread
-t/re/regexp_trielist.t		See if regular expressions work with trie optimisation
-t/re/regexp_unicode_prop.t	See if unicode properties work in regular expressions as expected
-t/re/regexp_unicode_prop_thr.t	See if unicode properties work in regular expressions as expected under threads
-t/re/rt122747.t			Test rt122747 assert faile (requires DEBUGGING)
-t/re/rxcode.t			See if /(?{ code })/ works
-t/re/script_run.t		See if script runs works
-t/re/speed.t			See if optimisations are keeping things fast
-t/re/speed_thr.t		ditto under threads
-t/re/subst.t			See if substitution works
-t/re/subst_amp.t		See if $&-related substitution works
-t/re/subst_wamp.t		See if substitution works with $& present
-t/re/substT.t			See if substitution works with -T
-t/re/uniprops01.t		Test unicode \p{} regex constructs
-t/re/uniprops02.t		Test unicode \p{} regex constructs
-t/re/uniprops03.t		Test unicode \p{} regex constructs
-t/re/uniprops04.t		Test unicode \p{} regex constructs
-t/re/uniprops05.t		Test unicode \p{} regex constructs
-t/re/uniprops06.t		Test unicode \p{} regex constructs
-t/re/uniprops07.t		Test unicode \p{} regex constructs
-t/re/uniprops08.t		Test unicode \p{} regex constructs
-t/re/uniprops09.t		Test unicode \p{} regex constructs
-t/re/uniprops10.t		Test unicode \p{} regex constructs
-t/re/user_prop_race_thr.t	Test races in user-defined \p{} under threads
 t/README			Instructions for regression tests
-t/run/cloexec.t			Test close-on-exec.
 t/run/dtrace.pl			For dtrace.t
-t/run/dtrace.t			Test for DTrace probes
-t/run/exit.t			Test perl's exit status.
 t/run/flib/broken.pm		Bad .pm file for switchM.t
 t/run/flib/t2.pm		Test for .pmcs with -I/dir/
 t/run/flib/t2.pmc		Test for .pmcs with -I/dir/
-t/run/fresh_perl.t		Tests that require a fresh perl.
-t/run/locale.t		Tests related to locale handling
-t/run/noswitch.t		Test aliasing ARGV for other switch tests
-t/run/runenv.t			Test if perl honors its environment variables.
-t/run/script.t			See if script invocation works
-t/run/switch0.t			Test the -0 switch
-t/run/switcha.t			Test the -a switch
-t/run/switchC.t			Test the -C switch
-t/run/switchd.t			Test the -d switch
-t/run/switchd-78586.t		See whether bug 78586 is fixed
-t/run/switchDx.t		Test the -D switch
-t/run/switches.t		Tests for the other switches (-0, -l, -c, -s, -M, -m, -V, -v, -h, -z, -i)
-t/run/switchF.t			Test the -F switch
-t/run/switchF1.t		Pathological tests for the -F switch
-t/run/switchF2.t		Pathological tests for the -F switch
-t/run/switchI.t			Test the -I switch
-t/run/switchM.t			Test the -M switch
-t/run/switchn.t			Test the -n switch
-t/run/switchp.t			Test the -p switch
-t/run/switcht.t			Test the -t switch
 t/run/switchx.aux		Data for switchx.t
-t/run/switchx.t			Test the -x switch
 t/run/switchx2.aux		Data for switchx.t
 t/run/switchx3.aux		Data for switchx.t
 t/TEST				The regression tester
 t/test.pl			Simple testing library
-t/test_pl/_num_to_alpha.t	Tests for the simple testing library 
-t/test_pl/can_isa_ok.t		Tests for the simple testing library
-t/test_pl/plan_skip_all.t	Tests for the simple testing library
-t/test_pl/tempfile.t		Tests for the simple testing library
 t/thread_it.pl			Run regression tests in a new thread
-t/uni/attrs.t			See if Unicode attributes work
-t/uni/bless.t			See if Unicode bless works
-t/uni/caller.t			See if Unicode doesn't get mangled in caller()
 t/uni/case.pl			See if Unicode casing works
-t/uni/chomp.t			See if Unicode chomp works
-t/uni/class.t			See if Unicode classes work (\p)
-t/uni/eval.t			See if Unicode hints don't affect eval()
-t/uni/fold.t			See if Unicode folding works
-t/uni/goto.t			See if Unicode goto &sub works
-t/uni/greek.t			See if Unicode in greek works
-t/uni/gv.t			See if Unicode GVs work.
-t/uni/labels.t			See if Unicode labels work
-t/uni/latin2.t			See if Unicode in latin2 works
-t/uni/lex_utf8.t		See if Unicode in lexer works
-t/uni/lower.t			See if Unicode casing works
-t/uni/method.t			See if Unicode methods work
-t/uni/opcroak.t			See if Unicode croaks from op.c work
-t/uni/overload.t		See if Unicode overloading works
-t/uni/package.t			See if Unicode in package declarations works
-t/uni/parser.t			See if Unicode in the parser works in edge cases.
-t/uni/readline.t		See if Unicode filehandles in <FH> work
-t/uni/select.t			See if Unicode filehandles aren't mangled by select()
-t/uni/sprintf.t			See if Unicode sprintf works
-t/uni/stash.t			See if Unicode stashes work
-t/uni/tie.t			See if Unicode tie works
-t/uni/title.t			See if Unicode casing works
-t/uni/tr_utf8.t			See if Unicode tr/// in utf8 works
-t/uni/universal.t		See if Unicode in calls to UNIVERSAL works
-t/uni/upper.t			See if Unicode casing works
-t/uni/variables.t		See that the rules for variable names work
-t/uni/write.t			See if Unicode formats work
-t/win32/crypt.t			Test Win32 crypt for compatibility
-t/win32/fs.t			Test Win32 link for compatibility
-t/win32/popen.t			Test for stdout races in backticks, etc
-t/win32/runenv.t		Test if Win* perl honors its env variables
-t/win32/signal.t		Test Win32 signal emulation
-t/win32/system.t		See if system works in Win*
 t/win32/system_tests		Test runner for system.t
 taint.c				Tainting code
 TestInit.pm			Preamble library for tests
