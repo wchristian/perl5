@@ -509,7 +509,7 @@ unless (@ARGV) {
     # a list, might fail if perl is really hosed, but they aren't needed for
     # make minitest, and the building of extensions will likely also fail if
     # something is that badly wrong.
-    push @ARGV, _tests_from_manifest($extensions, $known_extensions);
+    # push @ARGV, _tests_from_manifest($extensions, $known_extensions);
     unless ($::core) {
 	_find_tests('japh') if $::torture;
 	_find_tests('benchmark') if $::benchmark or $ENV{PERL_BENCHMARK};
