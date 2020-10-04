@@ -299,8 +299,9 @@ SKIP: {
     $DEV =~ s{^.+?\s\..+?$}{}m;
     @DEV =  grep { ! m{^\..+$} } @DEV;
 
-    # sometimes files cannot be stat'd, so inspecting those is pointless
-    @DEV = grep +( ($DEV =~ s{^.\?{9}\s.*$file.*}{}m) ? () : $_ ), @DEV
+    # sometimes files cannot be stat'd on cygwin, making inspecting pointless
+    # remove them from both @DEV and $DEV
+    @DEV = grep $DEV =~ s/^.\?{9}.*\s$_(?: -> .*)?$//m ? () : $_, @DEV
       if $Is_Cygwin;
 
     # Irix ls -l marks sockets with 'S' while 's' is a 'XENIX semaphore'.
