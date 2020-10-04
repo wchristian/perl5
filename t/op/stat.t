@@ -299,6 +299,10 @@ SKIP: {
     $DEV =~ s{^.+?\s\..+?$}{}m;
     @DEV =  grep { ! m{^\..+$} } @DEV;
 
+    # sometimes files cannot be stat'd, so inspecting those is pointless
+    @DEV = grep +( ($DEV =~ s{^.\?{9}\s.*$file.*}{}m) ? () : $_ ), @DEV
+      if $Is_Cygwin;
+
     # Irix ls -l marks sockets with 'S' while 's' is a 'XENIX semaphore'.
     if ($^O eq 'irix') {
         $DEV =~ s{^S(.+?)}{s$1}mg;
